@@ -38,15 +38,20 @@ class Comment
         return $this->id;
     }
 
+    public function setId(?int $id): Comment
+    {
+        $this->id = $id;
+        return $this;
+    }
+
     public function getAuthor(): ?string
     {
         return $this->author;
     }
 
-    public function setAuthor(string $author): static
+    public function setAuthor(?string $author): Comment
     {
         $this->author = $author;
-
         return $this;
     }
 
@@ -55,10 +60,9 @@ class Comment
         return $this->text;
     }
 
-    public function setText(string $text): static
+    public function setText(?string $text): Comment
     {
         $this->text = $text;
-
         return $this;
     }
 
@@ -67,10 +71,9 @@ class Comment
         return $this->email;
     }
 
-    public function setEmail(string $email): static
+    public function setEmail(?string $email): Comment
     {
         $this->email = $email;
-
         return $this;
     }
 
@@ -79,10 +82,9 @@ class Comment
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): Comment
     {
         $this->createdAt = $createdAt;
-
         return $this;
     }
 
@@ -91,10 +93,9 @@ class Comment
         return $this->conference;
     }
 
-    public function setConference(?Conference $conference): static
+    public function setConference(?Conference $conference): Comment
     {
         $this->conference = $conference;
-
         return $this;
     }
 
@@ -103,10 +104,9 @@ class Comment
         return $this->photoFilename;
     }
 
-    public function setPhotoFilename(?string $photoFilename): static
+    public function setPhotoFilename(?string $photoFilename): Comment
     {
         $this->photoFilename = $photoFilename;
-
         return $this;
     }
 }

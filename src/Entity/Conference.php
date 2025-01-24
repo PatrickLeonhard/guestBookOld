@@ -40,15 +40,20 @@ class Conference
         return $this->id;
     }
 
+    public function setId(?int $id): Conference
+    {
+        $this->id = $id;
+        return $this;
+    }
+
     public function getCity(): ?string
     {
         return $this->city;
     }
 
-    public function setCity(string $city): static
+    public function setCity(?string $city): Conference
     {
         $this->city = $city;
-
         return $this;
     }
 
@@ -57,22 +62,20 @@ class Conference
         return $this->year;
     }
 
-    public function setYear(string $year): static
+    public function setYear(?string $year): Conference
     {
         $this->year = $year;
-
         return $this;
     }
 
-    public function isInternational(): ?bool
+    public function getIsInternational(): ?bool
     {
         return $this->isInternational;
     }
 
-    public function setInternational(bool $isInternational): static
+    public function setIsInternational(?bool $isInternational): Conference
     {
         $this->isInternational = $isInternational;
-
         return $this;
     }
 
@@ -104,5 +107,9 @@ class Conference
         }
 
         return $this;
+    }
+    public function __toString(): string
+    {
+        return $this->city.' '.$this->year;
     }
 }
